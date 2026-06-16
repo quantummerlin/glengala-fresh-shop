@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://quantummerlin.github.io/glengala-fresh-shop/sitemap.xml
