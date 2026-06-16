@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wholesale — Glengala Fresh</title>
+    <meta name="description" content="Wholesale fresh produce for restaurants, cafes, and bulk buyers in Melbourne. Contact Glengala Fresh for wholesale pricing.">
+    <link rel="stylesheet" href="shop-styles.css">
+    <style>
+        .wholesale-container { max-width: 700px; margin: 0 auto; padding: 20px 16px 80px; }
+        .wholesale-header { text-align: center; margin-bottom: 24px; }
+        .wholesale-header h1 { color: #2d5016; font-size: 1.4rem; margin-bottom: 4px; }
+        .wholesale-header p { color: #718096; font-size: 0.9rem; }
+        .info-card { background: #fff; border-radius: 12px; padding: 20px; margin-bottom: 16px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+        .info-card h2 { color: #2d5016; font-size: 1.1rem; margin-bottom: 10px; }
+        .info-card p { color: #4a5568; font-size: 0.9rem; line-height: 1.6; margin-bottom: 8px; }
+        .info-card ul { padding-left: 20px; margin: 8px 0; }
+        .info-card li { color: #4a5568; font-size: 0.9rem; margin-bottom: 4px; }
+        .benefits-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 16px 0; }
+        .benefit-item { background: #f0fff4; border-radius: 8px; padding: 12px; text-align: center; }
+        .benefit-item .emoji { font-size: 1.5rem; display: block; margin-bottom: 4px; }
+        .benefit-item .text { font-size: 0.8rem; font-weight: 600; color: #2d5016; }
+        .contact-form { background: #fff; border-radius: 12px; padding: 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+        .contact-form h2 { color: #2d5016; font-size: 1.1rem; margin-bottom: 16px; }
+        .form-group { margin-bottom: 12px; }
+        .form-group label { display: block; font-size: 0.8rem; font-weight: 600; margin-bottom: 4px; color: #1a202c; }
+        .form-group input, .form-group textarea, .form-group select { width: 100%; padding: 10px 12px; border: 1px solid #e2e8f0; border-radius: 8px; font-size: 0.95rem; font-family: inherit; }
+        .form-group input:focus, .form-group textarea:focus, .form-group select:focus { outline: none; border-color: #38a169; box-shadow: 0 0 0 3px rgba(56,161,105,0.15); }
+        .form-group textarea { resize: vertical; min-height: 80px; }
+        .submit-btn { width: 100%; padding: 14px; background: #38a169; color: white; border: none; border-radius: 8px; font-size: 1rem; font-weight: 700; cursor: pointer; margin-top: 8px; }
+        .submit-btn:hover { background: #2d5016; }
+        .contact-direct { text-align: center; margin-top: 16px; padding: 16px; background: #f0fff4; border-radius: 8px; }
+        .contact-direct p { font-size: 0.9rem; color: #2d5016; margin-bottom: 4px; }
+        .contact-direct a { color: #38a169; font-weight: 700; text-decoration: none; font-size: 1.1rem; }
+        .nav-back { display: inline-block; margin-bottom: 12px; color: #38a169; text-decoration: none; font-weight: 600; font-size: 0.9rem; }
+    </style>
+</head>
+<body>
+    <div class="shop-container">
+        <a href="index.html" class="nav-back">← Back to Shop</a>
+
+        <div class="wholesale-header">
+            <h1>🏢 Wholesale & Bulk Orders</h1>
+            <p>Fresh produce for businesses and bulk buyers</p>
+        </div>
+
+        <!-- Who We Serve -->
+        <div class="info-card">
+            <h2>🤝 Who We Supply</h2>
+            <ul>
+                <li><strong>Restaurants & Cafes</strong> — daily fresh produce delivery</li>
+                <li><strong>Schools & Childcare</strong> — healthy snack programs</li>
+                <li><strong>Offices & Corporate</strong> — fruit boxes for staff</li>
+                <li><strong>Community Groups</strong> — bulk buy co-ops</li>
+                <li><strong>Families</strong> — group together, save together</li>
+            </ul>
+        </div>
+
+        <!-- Benefits -->
+        <div class="info-card">
+            <h2>✨ Why Go Wholesale With Us</h2>
+            <div class="benefits-grid">
+                <div class="benefit-item"><span class="emoji">🥬</span><span class="text">Farm-fresh daily</span></div>
+                <div class="benefit-item"><span class="emoji">💰</span><span class="text">Wholesale prices</span></div>
+                <div class="benefit-item"><span class="emoji">🚚</span><span class="text">Local delivery</span></div>
+                <div class="benefit-item"><span class="emoji">📋</span><span class="text">Flexible orders</span></div>
+                <div class="benefit-item"><span class="emoji">🤲</span><span class="text">No minimum order</span></div>
+                <div class="benefit-item"><span class="emoji">📱</span><span class="text">Order via text</span></div>
+            </div>
+        </div>
+
+        <!-- Existing Wholesale Customers -->
+        <div class="info-card">
+            <h2>📊 Our Wholesale Customers</h2>
+            <p>We're proud to supply Melbourne's hospitality industry:</p>
+            <ul>
+                <li>Marios Michael — <strong>$19K/year</strong></li>
+                <li>CBA Sunshine Social — <strong>$9K/year</strong></li>
+                <li>Plus restaurants, cafes & community groups across 3020</li>
+            </ul>
+            <p style="margin-top:8px; font-style:italic; color:#718096;">Total wholesale revenue: <strong>$46K+/year</strong> and growing.</p>
+        </div>
+
+        <!-- Inquiry Form -->
+        <div class="contact-form">
+            <h2>📋 Wholesale Inquiry</h2>
+            <p style="font-size:0.85rem; color:#718096; margin-bottom:16px;">Fill out the form below and we'll get back to you within 24 hours with a custom price list.</p>
+            <form onsubmit="submitInquiry(event)">
+                <div class="form-group">
+                    <label>Business / Group Name *</label>
+                    <input type="text" id="bizName" placeholder="Your business or group name" required>
+                </div>
+                <div class="form-group">
+                    <label>Contact Person *</label>
+                    <input type="text" id="contactName" placeholder="Your name" required>
+                </div>
+                <div class="form-group">
+                    <label>Phone *</label>
+                    <input type="tel" id="bizPhone" placeholder="Your phone number" required>
+                </div>
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" id="bizEmail" placeholder="your@email.com">
+                </div>
+                <div class="form-group">
+                    <label>Type of Business *</label>
+                    <select id="bizType" required>
+                        <option value="">Select...</option>
+                        <option value="restaurant">Restaurant</option>
+                        <option value="cafe">Café / Coffee Shop</option>
+                        <option value="school">School / Childcare</option>
+                        <option value="office">Office / Corporate</option>
+                        <option value="community">Community Group / Bulk Buy</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>What do you need? *</label>
+                    <textarea id="bizNeeds" placeholder="Tell us what products you're interested in and estimated quantities. e.g. '20kg bananas/week, 10kg tomatoes, juice for 30 staff'" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label>Preferred Delivery Day</label>
+                    <select id="bizDelivery">
+                        <option value="">Select...</option>
+                        <option value="monday">Monday</option>
+                        <option value="tuesday">Tuesday</option>
+                        <option value="wednesday">Wednesday</option>
+                        <option value="thursday">Thursday</option>
+                        <option value="friday">Friday (Market Day!)</option>
+                        <option value="saturday">Saturday</option>
+                        <option value="flexible">Flexible</option>
+                    </select>
+                </div>
+                <button type="submit" class="submit-btn">📨 Send Inquiry</button>
+            </form>
+        </div>
+
+        <!-- Direct Contact -->
+        <div class="contact-direct">
+            <p>Or contact us directly:</p>
+            <a href="tel:+61434694141">📞 0434 694 141</a>
+            <p style="margin-top:8px; font-size:0.8rem;">82 Glengala Rd, Sunshine VIC 3020</p>
+        </div>
+    </div>
+
+    <!-- Dark Mode Toggle -->
+    <div class="dark-mode-toggle">
+        <button class="dark-mode-btn" onclick="toggleDarkMode()">
+            <span id="themeIcon">☀️</span>
+            <span id="themeText">Light</span>
+        </button>
+    </div>
+
+    <div class="footer-menu">
+        <a href="index.html">🛒 Shop</a>
+        &nbsp;•&nbsp;
+        <a href="compare.html">📊 Price Comparison</a>
+    </div>
+
+    <script>
+        function submitInquiry(e) {
+            e.preventDefault();
+            const data = {
+                business: document.getElementById('bizName').value,
+                contact: document.getElementById('contactName').value,
+                phone: document.getElementById('bizPhone').value,
+                email: document.getElementById('bizEmail').value,
+                type: document.getElementById('bizType').value,
+                needs: document.getElementById('bizNeeds').value,
+                delivery: document.getElementById('bizDelivery').value
+            };
+
+            const text = `🏢 GLAENGALA FRESH — WHOLESALE INQUIRY\n\n` +
+                `Business: ${data.business}\n` +
+                `Contact: ${data.contact}\n` +
+                `Phone: ${data.phone}\n` +
+                `Email: ${data.email || 'N/A'}\n` +
+                `Type: ${data.type}\n` +
+                `Delivery: ${data.delivery || 'Flexible'}\n\n` +
+                `NEEDS:\n${data.needs}\n\n` +
+                `Please respond with wholesale pricing. Thank you!`;
+
+            const smsLink = `sms:0434694141?body=${encodeURIComponent(text)}`;
+            window.location.href = smsLink;
+
+            setTimeout(() => {
+                alert(`📨 Your wholesale inquiry is ready to send!\n\nYour SMS app should have opened. Send to 0434 694 141.\n\nWe'll respond within 24 hours with a custom price list.`);
+            }, 1000);
+        }
+
+        // Dark mode
+        if (localStorage.getItem('glengalaDarkMode') === 'true') {
+            document.body.classList.add('dark-mode');
+            document.getElementById('themeIcon').textContent = '🌙';
+            document.getElementById('themeText').textContent = 'Dark';
+        }
+        function toggleDarkMode() {
+            document.body.classList.toggle('dark-mode');
+            const isDark = document.body.classList.contains('dark-mode');
+            document.getElementById('themeIcon').textContent = isDark ? '🌙' : '☀️';
+            document.getElementById('themeText').textContent = isDark ? 'Dark' : 'Light';
+            localStorage.setItem('glengalaDarkMode', isDark ? 'true' : 'false');
+        }
+    </script>
+</body>
+</html>

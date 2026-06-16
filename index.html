@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glengala Fresh — Fresh Produce & Juice</title>
+    <meta name="description" content="Fresh produce and cold-pressed juice delivered to Sunshine 3020. Order via text — fresh from Melbourne's Epping Market to your door.">
+    <link rel="stylesheet" href="shop-styles.css">
+    <link rel="stylesheet" href="checkout-styles.css">
+    <script src="https://sites.super.myninja.ai/_assets/ninja-daytona-script.js"></script>
+</head>
+<body>
+    <div class="shop-container">
+        <!-- Trust Ribbon -->
+        <div class="trust-ribbon">
+            🥬 Hand-picked from Melbourne's Epping Market • $8 delivery across 3020 • Free over $50
+        </div>
+
+        <!-- Header -->
+        <div class="header">
+            <div class="language-toggle-container">
+                <div class="language-selector">
+                    <select id="languageSelect" class="language-select">
+                        <option value="en">🇬🇧 English</option>
+                        <option value="el">🇬🇷 Ελληνικά</option>
+                        <option value="vi">🇻🇳 Tiếng Việt</option>
+                    </select>
+                </div>
+            </div>
+            <div class="header-content">
+                <img src="Glengala Logo.png" alt="Glengala Fresh" class="logo" onerror="this.style.display='none'">
+                <h1>Glengala Fresh</h1>
+                <p class="shop-details">Fresh Produce & Cold-Pressed Juice • Sunshine 3020</p>
+            </div>
+        </div>
+
+        <!-- Search -->
+        <div class="search-bar">
+            <input type="text" id="shopSearch" class="search-input" placeholder="🔍 Search fresh produce & juice...">
+        </div>
+
+        <!-- Categories -->
+        <div class="categories-container">
+            <!-- Vegetables -->
+            <div class="category-tab">
+                <div class="category-header" onclick="toggleCategory('vegetables')">
+                    <div class="category-title"><span class="category-emoji">🥕</span> Fresh Vegetables</div>
+                    <span class="category-toggle">▼</span>
+                </div>
+                <div id="vegetablesContent" class="category-content">
+                    <div id="vegetablesProducts" class="products-grid"></div>
+                </div>
+            </div>
+
+            <!-- Fruits -->
+            <div class="category-tab">
+                <div class="category-header" onclick="toggleCategory('fruits')">
+                    <div class="category-title"><span class="category-emoji">🍎</span> Fresh Fruits</div>
+                    <span class="category-toggle">▼</span>
+                </div>
+                <div id="fruitsContent" class="category-content">
+                    <div id="fruitsProducts" class="products-grid"></div>
+                </div>
+            </div>
+
+            <!-- Herbs & Greens -->
+            <div class="category-tab">
+                <div class="category-header" onclick="toggleCategory('herbs')">
+                    <div class="category-title"><span class="category-emoji">🌿</span> Herbs, Salads & Greens</div>
+                    <span class="category-toggle">▼</span>
+                </div>
+                <div id="herbsContent" class="category-content">
+                    <div id="herbsProducts" class="products-grid"></div>
+                </div>
+            </div>
+
+            <!-- Eggs -->
+            <div class="category-tab">
+                <div class="category-header" onclick="toggleCategory('eggs')">
+                    <div class="category-title"><span class="category-emoji">🥚</span> Eggs</div>
+                    <span class="category-toggle">▼</span>
+                </div>
+                <div id="eggsContent" class="category-content">
+                    <div id="eggsProducts" class="products-grid"></div>
+                </div>
+            </div>
+
+            <!-- Juices & Beverages -->
+            <div class="category-tab">
+                <div class="category-header" onclick="toggleCategory('juices')">
+                    <div class="category-title"><span class="category-emoji">🧃</span> Fresh Juices & Beverages</div>
+                    <span class="category-toggle">▼</span>
+                </div>
+                <div id="juicesContent" class="category-content">
+                    <div id="juicesProducts" class="products-grid"></div>
+                </div>
+            </div>
+
+            <!-- Nuts & Dried Fruit -->
+            <div class="category-tab">
+                <div class="category-header" onclick="toggleCategory('nuts')">
+                    <div class="category-title"><span class="category-emoji">🥜</span> Nuts, Dried Fruit & Legumes</div>
+                    <span class="category-toggle">▼</span>
+                </div>
+                <div id="nutsContent" class="category-content">
+                    <div id="nutsProducts" class="products-grid"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Cart Summary -->
+        <div class="cart-summary" id="cartSummary">
+            <div class="cart-toggle" onclick="toggleCart()">
+                <span>🛒 Cart (<span id="cartCount">0</span>)</span>
+                <span id="cartToggleIcon">▲</span>
+            </div>
+            <div class="cart-content" id="cartContent">
+                <div id="cartItems" class="cart-items">
+                    <div class="empty-cart">Your cart is empty</div>
+                </div>
+                <div id="cartTotal" class="cart-total">Total: $0.00</div>
+                <button class="checkout-btn" onclick="shop.checkout()">Confirm Order</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Dark Mode Toggle -->
+    <div class="dark-mode-toggle">
+        <button id="darkModeToggle" class="dark-mode-btn" onclick="toggleDarkMode()">
+            <span id="themeIcon">☀️</span>
+            <span id="themeText">Light</span>
+        </button>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer-menu">
+        <a href="#" onclick="showOurStory(); return false;">📖 Our Story</a>
+        &nbsp;•&nbsp;
+        <a href="compare.html">📊 Price Comparison</a>
+        &nbsp;•&nbsp;
+        <a href="wholesale.html">🏢 Wholesale</a>
+    </div>
+
+    <!-- Our Story Modal -->
+    <div id="ourStoryModal" class="story-modal" style="display: none;">
+        <div class="story-modal-content">
+            <span class="story-close" onclick="closeOurStory()">&times;</span>
+            <h2>Our Story</h2>
+            <p>Welcome to Glengala Fresh! We're a family-owned fresh produce shop in Sunshine, Melbourne.</p>
+            <p>Wayne and Dee hand-pick the freshest produce from Melbourne's Epping Market, and cold-press our juices fresh daily using ozonated water.</p>
+            <p>We've been serving the Sunshine community with quality fruit, veg, eggs, nuts, and cold-pressed juice — fair prices, no fuss.</p>
+            <p><strong>82 Glengala Rd, Sunshine VIC 3020</strong></p>
+            <p>📞 0434 694 141</p>
+            <p>Closed Sundays • Market day: Friday</p>
+        </div>
+    </div>
+
+    <script src="products-data.js"></script>
+    <script src="shop-functions-enhanced.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const customCSS = localStorage.getItem('glengalaCustomCSS');
+            if (customCSS) {
+                const style = document.createElement('style');
+                style.textContent = customCSS;
+                document.head.appendChild(style);
+            }
+        });
+    </script>
+</body>
+</html>

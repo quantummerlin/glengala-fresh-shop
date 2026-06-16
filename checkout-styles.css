@@ -1,0 +1,234 @@
+/* Glengala Fresh — Checkout Styles
+   Additional styles for order summary overlay, modals
+   ═══════════════════════════════════════════════════════ */
+
+/* ── Order Summary Overlay ── */
+.order-summary-overlay {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.6);
+    z-index: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+    backdrop-filter: blur(4px);
+}
+
+.order-summary-container {
+    background: #fff;
+    border-radius: 12px;
+    padding: 24px;
+    max-width: 500px;
+    width: 100%;
+    max-height: 85vh;
+    overflow-y: auto;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+    -webkit-overflow-scrolling: touch;
+}
+
+.order-summary-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid #38a169;
+}
+
+.order-summary-header h2 {
+    font-size: 1.2rem;
+    color: #2d5016;
+    margin: 0;
+}
+
+.close-btn {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #718096;
+    padding: 4px 8px;
+    border-radius: 4px;
+    transition: background 0.15s;
+}
+
+.close-btn:hover { background: #f7fafc; }
+
+.order-info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 16px;
+    font-size: 0.85rem;
+    color: #718096;
+}
+
+.order-number { font-weight: 700; }
+
+.order-items h3 {
+    font-size: 0.95rem;
+    margin-bottom: 8px;
+    color: #2d5016;
+}
+
+.order-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 8px 0;
+    border-bottom: 1px solid #e2e8f0;
+    font-size: 0.9rem;
+    gap: 8px;
+}
+
+.item-name { font-weight: 600; flex: 1; }
+.item-details {
+    text-align: right;
+    font-size: 0.8rem;
+    color: #718096;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.order-total {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 0;
+    font-size: 1.1rem;
+    font-weight: 800;
+    border-top: 2px solid #38a169;
+    margin: 12px 0;
+    line-height: 1.6;
+}
+
+.total-amount {
+    text-align: right;
+    color: #2d5016;
+    font-size: 1.3rem;
+}
+
+/* ── Customer Form in Checkout ── */
+.customer-form {
+    margin: 16px 0;
+    padding: 16px;
+    background: #f0fff4;
+    border-radius: 8px;
+}
+
+.customer-form h4 {
+    font-size: 0.95rem;
+    margin-bottom: 12px;
+    color: #2d5016;
+}
+
+.form-group { margin-bottom: 10px; }
+
+.form-group label {
+    display: block;
+    font-size: 0.8rem;
+    font-weight: 600;
+    margin-bottom: 4px;
+    color: #1a202c;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    font-family: inherit;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #38a169;
+    box-shadow: 0 0 0 3px rgba(56, 161, 105, 0.15);
+}
+
+.form-group textarea { resize: vertical; min-height: 60px; }
+
+/* ── Order Action Buttons ── */
+.order-actions {
+    display: flex;
+    gap: 8px;
+    margin-top: 8px;
+}
+
+.order-actions button {
+    flex: 1;
+    padding: 14px 12px;
+    border: none;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.15s, transform 0.1s;
+}
+
+.order-actions button:active { transform: scale(0.97); }
+
+.copy-order-btn {
+    background: #e2e8f0;
+    color: #1a202c;
+}
+
+.copy-order-btn:hover { background: #cbd5e0; }
+
+.text-order-btn {
+    background: #38a169;
+    color: white;
+}
+
+.text-order-btn:hover { background: #2d5016; }
+
+/* ── Story Modal ── */
+.story-modal {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.6);
+    z-index: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+    backdrop-filter: blur(4px);
+}
+
+.story-modal-content {
+    background: #fff;
+    border-radius: 12px;
+    padding: 28px;
+    max-width: 460px;
+    width: 100%;
+    position: relative;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+}
+
+.story-close {
+    position: absolute;
+    top: 12px;
+    right: 16px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #718096;
+    line-height: 1;
+    padding: 4px;
+}
+
+.story-modal-content h2 {
+    color: #2d5016;
+    margin-bottom: 16px;
+    font-size: 1.3rem;
+}
+
+.story-modal-content p {
+    margin-bottom: 10px;
+    line-height: 1.7;
+    color: #4a5568;
+    font-size: 0.95rem;
+}

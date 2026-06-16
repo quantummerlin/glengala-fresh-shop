@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Price Comparison — Glengala Fresh vs Coles vs Woolworths</title>
+    <meta name="description" content="See how Glengala Fresh prices compare to Coles and Woolworths on 30 everyday essentials. Updated weekly.">
+    <link rel="stylesheet" href="shop-styles.css">
+    <style>
+        .compare-container { max-width: 900px; margin: 0 auto; padding: 20px 16px 80px; }
+        .compare-header { text-align: center; margin-bottom: 24px; }
+        .compare-header h1 { color: #2d5016; font-size: 1.4rem; margin-bottom: 4px; }
+        .compare-header p { color: #718096; font-size: 0.85rem; }
+        .compare-table-wrapper { overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 16px 0; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+        .compare-table { width: 100%; border-collapse: collapse; background: #fff; font-size: 0.85rem; }
+        .compare-table th { background: #2d5016; color: #fff; padding: 10px 8px; text-align: center; font-weight: 700; white-space: nowrap; position: sticky; top: 0; }
+        .compare-table th:first-child { text-align: left; padding-left: 12px; min-width: 140px; }
+        .compare-table td { padding: 10px 8px; text-align: center; border-bottom: 1px solid #e2e8f0; }
+        .compare-table td:first-child { text-align: left; padding-left: 12px; font-weight: 600; }
+        .compare-table tr:hover td { background: #f0fff4; }
+        .price-you { color: #2d5016; font-weight: 800; font-size: 0.95rem; }
+        .price-chain { color: #718096; }
+        .winner-you { background: #f0fff4 !important; }
+        .winner-chain { background: #fff5f5 !important; }
+        .badge-win { display: inline-block; background: #38a169; color: #fff; font-size: 0.65rem; padding: 2px 6px; border-radius: 10px; margin-left: 4px; font-weight: 700; }
+        .badge-lose { display: inline-block; background: #e53e3e; color: #fff; font-size: 0.65rem; padding: 2px 6px; border-radius: 10px; margin-left: 4px; font-weight: 700; }
+        .badge-close { display: inline-block; background: #dd6b20; color: #fff; font-size: 0.65rem; padding: 2px 6px; border-radius: 10px; margin-left: 4px; font-weight: 700; }
+        .savings { font-size: 0.75rem; color: #38a169; font-weight: 700; }
+        .stats-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin: 20px 0; }
+        .stat-card { background: #fff; border-radius: 12px; padding: 16px; text-align: center; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+        .stat-card .number { font-size: 2rem; font-weight: 800; }
+        .stat-card .number.green { color: #38a169; }
+        .stat-card .number.red { color: #e53e3e; }
+        .stat-card .number.orange { color: #dd6b20; }
+        .stat-card .label { font-size: 0.75rem; color: #718096; margin-top: 4px; }
+        .last-updated { text-align: center; font-size: 0.75rem; color: #a0aec0; margin-top: 20px; }
+        .note-box { background: #fffbf0; border: 1px solid #f0d060; border-radius: 8px; padding: 12px 16px; margin: 16px 0; font-size: 0.8rem; color: #744210; }
+        .nav-back { display: inline-block; margin-bottom: 12px; color: #38a169; text-decoration: none; font-weight: 600; font-size: 0.9rem; }
+    </style>
+</head>
+<body>
+    <div class="shop-container">
+        <a href="index.html" class="nav-back">← Back to Shop</a>
+
+        <div class="compare-header">
+            <h1>📊 Price Comparison</h1>
+            <p>Glengala Fresh vs Coles vs Woolworths — Sunshine 3020</p>
+        </div>
+
+        <div class="stats-row">
+            <div class="stat-card">
+                <div class="number green" id="winCount">—</div>
+                <div class="label">We're cheaper</div>
+            </div>
+            <div class="stat-card">
+                <div class="number orange" id="closeCount">—</div>
+                <div class="label">Roughly even</div>
+            </div>
+            <div class="stat-card">
+                <div class="number red" id="loseCount">—</div>
+                <div class="label">Chains cheaper</div>
+            </div>
+        </div>
+
+        <div class="note-box">
+            ⚠️ Coles & Woolworths prices are indicative (sourced from publicly available data, updated weekly). Chain specials cycle Wed–Tue. We compare standard prices.
+        </div>
+
+        <div class="compare-table-wrapper">
+            <table class="compare-table">
+                <thead>
+                    <tr>
+                        <th>Product</th>
+                        <th>Glengala</th>
+                        <th>Coles</th>
+                        <th>Woolies</th>
+                        <th>Cheapest</th>
+                    </tr>
+                </thead>
+                <tbody id="compareTableBody">
+                    <!-- Filled by JavaScript -->
+                </tbody>
+            </table>
+        </div>
+
+        <p class="last-updated">Last updated: <span id="updateDate">—</span> • 30 products tracked</p>
+    </div>
+
+    <!-- Cart Summary (reuse from shop) -->
+    <div class="cart-summary" id="cartSummary" style="display:none;">
+        <div class="cart-toggle" onclick="toggleCart()">
+            <span>🛒 Cart (<span id="cartCount">0</span>)</span>
+            <span id="cartToggleIcon">▲</span>
+        </div>
+        <div class="cart-content" id="cartContent">
+            <div id="cartItems" class="cart-items"><div class="empty-cart">Your cart is empty</div></div>
+            <div id="cartTotal" class="cart-total">Total: $0.00</div>
+            <button class="checkout-btn" onclick="shop.checkout()">Confirm Order</button>
+        </div>
+    </div>
+
+    <!-- Dark Mode Toggle -->
+    <div class="dark-mode-toggle">
+        <button class="dark-mode-btn" onclick="toggleDarkMode()">
+            <span id="themeIcon">☀️</span>
+            <span id="themeText">Light</span>
+        </button>
+    </div>
+
+    <div class="footer-menu">
+        <a href="index.html">🛒 Shop</a>
+        &nbsp;•&nbsp;
+        <a href="wholesale.html">🏢 Wholesale</a>
+    </div>
+
+    <script src="compare-data.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            renderCompareTable();
+            if (localStorage.getItem('glengalaDarkMode') === 'true') {
+                document.body.classList.add('dark-mode');
+                document.getElementById('themeIcon').textContent = '🌙';
+                document.getElementById('themeText').textContent = 'Dark';
+            }
+        });
+    </script>
+</body>
+</html>
